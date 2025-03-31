@@ -22,7 +22,7 @@ def test_lh5concat(lgnd_test_data, tmptestdir):
     )
     outfile = f"{tmptestdir}/out.lh5"
 
-    cli.lh5concat_cli(["--output", outfile, "--debug", "--", infile1, infile2])
+    cli.lh5concat_cli(["--output", outfile, "--debug","--overwrite", "--", infile1, infile2])
 
     assert lh5.ls(outfile) == [
         "ch1057600",
